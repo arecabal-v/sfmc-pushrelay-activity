@@ -32,7 +32,7 @@
     "publish": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
     "validate": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
     "stop": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
-    "url": "https://TU_USUARIO.github.io/sfmc-pushrelay-activity/index.html"
+    "url": "https://arecabal-v.github.io/sfmc-pushrelay-activity/index.html"
   },
   "schema": {
     "version": 1
