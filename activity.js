@@ -1,30 +1,31 @@
 /* global Postmonger */
 (function () {
-  const connection = new Postmonger.Session();
-  let payload = null;
+  const session = new Postmonger.Session();
+  let activity = null;
 
-  connection.on('initActivity', function (data) {
-    payload = data;
+  // Journey Builder espera este "ready"
+  session.trigger("ready");
 
-    // Si no existe, créalo
-    payload.metaData = payload.metaData || {};
-    payload.metaData.isConfigured = true;
-
-    // IMPORTANTE: esto “desbloquea” a Journey Builder
-    connection.trigger('updateActivity', payload);
-    connection.trigger('ready');
+  // Recibe el payload de la activity
+  session.on("initActivity", (data) => {
+    activity = data;
   });
 
-  // Journey Builder pide guardar
-  connection.on('requestedInteraction', function () {
-    connection.trigger('updateActivity', payload);
-  });
+  // Cuando el usuario aprieta Done en tu botón
+  function finish() {
+    if (!activity) return;
 
-  // Por si pide tokens (aunque no uses)
-  connection.on('requestedTokens', function () {
-    connection.trigger('setTokens', {});
-  });
+    // Marcar como configurada (CRÍTICO para que JB no reclame)
+    activity.metaData = activity.metaData || {};
+    activity.metaData.isConfigured = true;
 
-  // Arranca handshake
-  connection.trigger('ready');
+    session.trigger("updateActivity", activity);
+    session.trigger("done");
+  }
+
+  // Journey Builder también dispara clickedNext/clickedBack en algunos flujos
+  session.on("clickedNext", finish);
+  session.on("clickedBack", () => session.trigger("done"));
+
+  document.getElementById("done").addEventListener("click", finish);
 })();
