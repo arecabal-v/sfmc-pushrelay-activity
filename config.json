@@ -4,7 +4,7 @@
     "icon": "https://www.salesforce.com/favicon.ico",
     "iconSmall": "https://www.salesforce.com/favicon.ico",
     "category": "Custom",
-    "isConfigured": true
+    "isConfigured": false
   },
   "type": "REST",
   "lang": {
@@ -17,39 +17,22 @@
     "execute": {
       "inArguments": [
         { "ContactKey": "{{Contact.Key}}" },
-        { "CustomerId": "{{Contact.Attribute.DE_TEST_PushRelay_DEV.CustomerId}}" },
-        { "DeviceToken": "{{Contact.Attribute.DE_TEST_PushRelay_DEV.DeviceToken}}" }
+        { "CustomerId": "{{Event.DE_TEST_PushRelay_DEV.CustomerId}}" },
+        { "DeviceToken": "{{Event.DE_TEST_PushRelay_DEV.DeviceToken}}" }
       ],
       "outArguments": [],
       "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/execute",
       "verb": "POST",
-      "useJwt": true
+      "useJwt": false
     }
   },
   "configurationArguments": {
     "applicationExtensionKey": "51e888f3-a223-40a3-8f0c-43eb11942dc9",
-    "save": {
-      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/save",
-      "verb": "POST",
-      "useJwt": true
-    },
-    "publish": {
-      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/publish",
-      "verb": "POST",
-      "useJwt": true
-    },
-    "validate": {
-      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/validate",
-      "verb": "POST",
-      "useJwt": true
-    },
-    "stop": {
-      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/stop",
-      "verb": "POST",
-      "useJwt": true
-    }
+    "save": { "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/save", "verb": "POST", "useJwt": false },
+    "publish": { "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/publish", "verb": "POST", "useJwt": false },
+    "validate": { "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/validate", "verb": "POST", "useJwt": false },
+    "stop": { "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/stop", "verb": "POST", "useJwt": false },
+    "url": "https://arecabal-v.github.io/sfmc-pushrelay-activity/index.html"
   },
-  "schema": {
-    "version": 1
-  }
+  "schema": { "version": 1 }
 }
