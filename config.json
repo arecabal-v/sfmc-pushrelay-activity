@@ -21,18 +21,33 @@
         { "DeviceToken": "{{Contact.Attribute.DE_TEST_PushRelay_DEV.DeviceToken}}" }
       ],
       "outArguments": [],
-      "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2",
+      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/execute",
       "verb": "POST",
       "useJwt": true
     }
   },
   "configurationArguments": {
     "applicationExtensionKey": "51e888f3-a223-40a3-8f0c-43eb11942dc9",
-    "save": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
-    "publish": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
-    "validate": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
-    "stop": { "url": "https://webhook.site/0ab141b2-ff79-4d32-b1a4-4bd804a8c3f2", "verb": "POST", "useJwt": true },
-    "url": "https://arecabal-v.github.io/sfmc-pushrelay-activity/index.html"
+    "save": {
+      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/save",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "publish": {
+      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/publish",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "validate": {
+      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/validate",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "stop": {
+      "url": "https://billowing-disk-3e02.alvarorecabal-v.workers.dev/stop",
+      "verb": "POST",
+      "useJwt": true
+    }
   },
   "schema": {
     "version": 1
