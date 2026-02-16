@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Push Relay</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/postmonger/0.0.14/postmonger.js"></script>
-    <script src="./activity.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body { font-family: Arial, sans-serif; padding: 16px; }
-      .ok { background:#f3f3f3; padding:12px; border-radius:6px; }
-      code { background:#eee; padding:2px 6px; border-radius:4px; }
+      button { padding: 10px 14px; cursor: pointer; }
+      code { background:#f3f3f3; padding:2px 6px; border-radius:4px; }
     </style>
   </head>
   <body>
-    <div class="ok">
-      <h3>Push Relay</h3>
-      <p>UI mínima OK. Esta activity no pide config.</p>
-      <p>Cuando guardas/validas, JB puede continuar.</p>
-    </div>
+    <h3>Push Relay</h3>
+    <p>Config mínima. Solo marca la activity como configurada.</p>
+    <button id="done">Done</button>
+
+    <!-- Postmonger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postmonger/0.0.14/postmonger.min.js"></script>
+    <script src="./customActivity.js"></script>
   </body>
 </html>
